@@ -55,6 +55,9 @@ import Paginator from "./Paginator";
  *
  * If it's not working, you might need to complete at least TODOs 1 and 2 first.
  *
+ * For grading purposes, do not remove any of the provided code, especially any 'data-testid' attributes.
+ * Instead, add new code as needed!
+ *
  * Good luck!
  *
  * As always, feel free to ask questions on Ed or come to office hours.
