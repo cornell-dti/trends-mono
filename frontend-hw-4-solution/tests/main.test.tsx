@@ -1,4 +1,3 @@
-import React from "react";
 import { describe, test, expect } from "vitest";
 import { render, fireEvent } from "@testing-library/react";
 import Gallery from "../src/components/Gallery";

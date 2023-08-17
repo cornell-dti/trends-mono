@@ -3,11 +3,11 @@ import { ChevronUpCircle, ChevronDownCircle } from "lucide-react";
 // EXAMPLE SOLUTION
 
 type Props = {
-    minLimit?: number; // The minimum page number you can go to. You should assume it is 1 if not provided.
-    maxLimit: number; // The maximum page number you can go to. You can assume it is at least 1.
+    minLimit?: number;
+    maxLimit: number;
 
-    page: number; // The current page number. You should assume it is 1 if not provided.
-    setPage: (page: number) => void; // A function that sets the current page number.
+    page: number;
+    setPage: (page: number) => void;
 };
 
 const Paginator = (props: Props) => {
