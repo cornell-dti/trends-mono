@@ -41,7 +41,7 @@ export const convertToCelsius = (fahrenheit) => {
 // QUESTION 5: Find Duplicate Characters (10 points)
 // Write a function that takes a string and returns an array of characters that appear more than once in the string.
 // INPUT: A string "inputString"
-// OUTPUT: An array of characters that appear more than once.
+// OUTPUT: An array of characters that appear more than once, sorted in alphabetical order.
 export const findDuplicates = (inputString) => {
     // Your code here
 };

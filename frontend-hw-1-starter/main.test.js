@@ -33,8 +33,8 @@ test("32 Fahrenheit is 0 Celsius", () => {
 });
 
 // Test for QUESTION 5: Find Duplicate Characters
-test('duplicate characters in "programming" are ["r", "g", "m"]', () => {
-    expect(findDuplicates("programming")).toEqual(["r", "g", "m"]);
+test('duplicate characters in "programming" are ["g", "m", "r"]', () => {
+    expect(findDuplicates("programming")).toEqual(["g", "m", "r"]);
 });
 
 // Test for QUESTION 6: Highest Profit Opportunity

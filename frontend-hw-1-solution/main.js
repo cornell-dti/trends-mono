@@ -32,7 +32,7 @@ export const findDuplicates = (inputString) => {
             duplicates.push(char);
         }
     }
-    return duplicates;
+    return duplicates.sort();
 };
 
 // QUESTION 6: Highest Profit Opportunity
