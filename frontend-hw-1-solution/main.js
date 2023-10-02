@@ -1,27 +1,27 @@
 // EXAMPLE SOLUTION
 
 // QUESTION 1: Sum of Array
-function sumOfArray(numbers) {
+export const sumOfArray = (numbers) => {
     return numbers.reduce((sum, num) => sum + num, 0);
-}
+};
 
 // QUESTION 2: Filter Even Numbers
-function filterEvenNumbers(numbers) {
+export const filterEvenNumbers = (numbers) => {
     return numbers.filter((num) => num % 2 === 0);
-}
+};
 
 // QUESTION 3: String Reversal
-function reverseString(inputString) {
+export const reverseString = (inputString) => {
     return inputString.split("").reverse().join("");
-}
+};
 
 // QUESTION 4: Temperature Converter
-function convertToFahrenheit(celsius) {
+export const convertToCelsius = (fahrenheit) => {
     return (celsius - 32) * (5 / 9);
-}
+};
 
 // QUESTION 5: Find Duplicate Characters
-function findDuplicates(inputString) {
+export const findDuplicates = (inputString) => {
     const charCount = {};
     const duplicates = [];
     inputString.split("").forEach((char) => {
@@ -33,10 +33,10 @@ function findDuplicates(inputString) {
         }
     }
     return duplicates;
-}
+};
 
 // QUESTION 6: Highest Profit Opportunity
-function highestProfitOpportunity(prices) {
+export const highestProfitOpportunity = (prices) => {
     let buyIndex = -1;
     let sellIndex = -1;
     let maxProfit = 0;
@@ -52,16 +52,16 @@ function highestProfitOpportunity(prices) {
     }
 
     return { buyIndex, sellIndex };
-}
+};
 
 // QUESTION 7: Palindrome Checker
-function isPalindrome(inputString) {
+export const isPalindrome = (inputString) => {
     const cleanString = inputString.replace(/\s+/g, "");
     return cleanString === cleanString.split("").reverse().join("");
-}
+};
 
 // QUESTION 9: Prime Number Checker
-function isPrime(n) {
+export const isPrime = (n) => {
     if (n <= 1) return false;
     if (n <= 3) return true;
 
@@ -70,10 +70,10 @@ function isPrime(n) {
     }
 
     return true;
-}
+};
 
 // QUESTION 10: Fibonacci Sequence
-function fibonacci(n) {
+export const fibonacci = (n) => {
     if (n <= 1) return n;
     let previous = 0;
     let current = 1;
@@ -85,14 +85,14 @@ function fibonacci(n) {
     }
 
     return current;
-}
+};
 
 // Exports for testing
 module.exports = {
     sumOfArray,
     filterEvenNumbers,
     reverseString,
-    convertToFahrenheit,
+    convertToCelsius,
     findDuplicates,
     highestProfitOpportunity,
     isPalindrome,

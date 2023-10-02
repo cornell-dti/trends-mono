@@ -2,7 +2,7 @@ import {
     sumOfArray,
     filterEvenNumbers,
     reverseString,
-    convertToFahrenheit,
+    convertToCelsius,
     findDuplicates,
     highestProfitOpportunity,
     isPalindrome,
@@ -29,7 +29,7 @@ test('reverse string "JavaScript" results in "tpircSavaJ"', () => {
 
 // Test for QUESTION 4: Temperature Converter
 test("32 Fahrenheit is 0 Celsius", () => {
-    expect(convertToFahrenheit(32)).toBe(0);
+    expect(convertToCelsius(32)).toBe(0);
 });
 
 // Test for QUESTION 5: Find Duplicate Characters

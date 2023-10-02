@@ -2,7 +2,7 @@ import {
     sumOfArray,
     filterEvenNumbers,
     reverseString,
-    convertToFahrenheit,
+    convertToCelsius,
     findDuplicates,
     highestProfitOpportunity,
     isPalindrome,
@@ -47,13 +47,13 @@ test('reverse string with spaces "ab c" results in "c ba"', () => {
 
 // Test for QUESTION 4: Temperature Converter
 test("32 Fahrenheit is 0 Celsius", () => {
-    expect(convertToFahrenheit(32)).toBe(0);
+    expect(convertToCelsius(32)).toBe(0);
 });
 test("0 Fahrenheit is approximately -17.78 Celsius", () => {
-    expect(convertToFahrenheit(0)).toBeCloseTo(-17.78, 2);
+    expect(convertToCelsius(0)).toBeCloseTo(-17.78, 2);
 });
 test("212 Fahrenheit is 100 Celsius", () => {
-    expect(convertToFahrenheit(212)).toBe(100);
+    expect(convertToCelsius(212)).toBe(100);
 });
 
 // Test for QUESTION 5: Find Duplicate Characters

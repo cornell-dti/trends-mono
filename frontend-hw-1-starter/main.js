@@ -7,74 +7,74 @@
 // Let us know if you have any questions or concerns on Ed!
 
 // QUESTION 1: Sum of Array (10 points)
-// Write a export function that takes an array of numbers and returns the sum of all the numbers.
+// Write a function that takes an array of numbers and returns the sum of all the numbers.
 // INPUT: An array of numbers [n1, n2, n3, ...]
 // OUTPUT: Sum of all numbers in the array.
-export function sumOfArray(numbers) {
+export const sumOfArray = (numbers) => {
     // Your code here
-}
+};
 
 // QUESTION 2: Filter Even Numbers (10 points)
-// Write a export function that filters out all the odd numbers from an array and returns a new array of even numbers.
+// Write a function that filters out all the odd numbers from an array and returns a new array of even numbers.
 // INPUT: An array of numbers [n1, n2, n3, ...]
 // OUTPUT: An array of even numbers.
-export function filterEvenNumbers(numbers) {
+export const filterEvenNumbers = (numbers) => {
     // Your code here
-}
+};
 
 // QUESTION 3: String Reversal (10 points)
-// Write a export function that takes a string and returns it reversed.
+// Write a function that takes a string and returns it reversed.
 // INPUT: A string "inputString"
 // OUTPUT: The reversed string.
-export function reverseString(inputString) {
+export const reverseString = (inputString) => {
     // Your code here
-}
+};
 
 // QUESTION 4: Temperature Converter (10 points)
-// Write a export function that takes a temperature in Fahrenheit and converts it to Celsius.
+// Write a function that takes a temperature in Fahrenheit and converts it to Celsius.
 // INPUT: Temperature in Fahrenheit
 // OUTPUT: Temperature in Celsius
-export function convertToFahrenheit(celsius) {
+export const convertToCelsius = (fahrenheit) => {
     // Your code here
-}
+};
 
 // QUESTION 5: Find Duplicate Characters (10 points)
-// Write a export function that takes a string and returns an array of characters that appear more than once in the string.
+// Write a function that takes a string and returns an array of characters that appear more than once in the string.
 // INPUT: A string "inputString"
 // OUTPUT: An array of characters that appear more than once.
-export function findDuplicates(inputString) {
+export const findDuplicates = (inputString) => {
     // Your code here
-}
+};
 
 // QUESTION 6: Highest Profit Opportunity (10 points)
 // Given an array representing stock prices over time, identify the indices of the time to buy and sell to gain the highest profit.
 // Assume that you must buy before you sell.
 // INPUT: An array of numbers [p1, p2, p3, ...]
 // OUTPUT: An object { buyIndex: x, sellIndex: y }.
-export function highestProfitOpportunity(prices) {
+export const highestProfitOpportunity = (prices) => {
     // Your code here
-}
+};
 
 // QUESTION 7: Palindrome Checker (10 points)
-// Write a export function that checks if a given word or phrase is a palindrome (reads the same backward as forward, ignoring spaces).
+// Write a function that checks if a given word or phrase is a palindrome (reads the same backward as forward, ignoring spaces).
 // INPUT: A string "inputString"
 // OUTPUT: A boolean value - true if palindrome, false otherwise.
-export function isPalindrome(inputString) {
+export const isPalindrome = (inputString) => {
     // Your code here
-}
+};
 
 // QUESTION 8: Prime Number Checker (10 points)
-// Write a export function that checks if a given number is prime.
+// Write a function that checks if a given number is prime.
 // INPUT: A number "n"
 // OUTPUT: A boolean value - true if prime, false otherwise.
-export function isPrime(n) {
+export const isPrime = (n) => {
     // Your code here
-}
+};
 
 // QUESTION 9: Fibonacci Sequence (10 points)
-// Write a export function that returns the nth number in the Fibonacci sequence.
+// Write a function that returns the nth number in the Fibonacci sequence.
 // INPUT: An integer n (1 <= n <= 50)
 // OUTPUT: The nth number in the Fibonacci sequence.
-export function fibonacci(n) {
+export const fibonacci = (n) => {
     // Your code here
-}
+};
