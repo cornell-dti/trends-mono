@@ -6,6 +6,8 @@
 // This does not guarantee that you will get full credit on the autograder, but it is a good start!
 // Let us know if you have any questions or concerns on Ed!
 
+// You should be able to run `pnpm test` in your terminal to run the sample test cases we have provided!
+
 // QUESTION 1: Sum of Array (10 points)
 // Write a function that takes an array of numbers and returns the sum of all the numbers.
 // INPUT: An array of numbers [n1, n2, n3, ...]

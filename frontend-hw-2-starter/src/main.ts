@@ -6,6 +6,8 @@
 // This does not guarantee that you will get full credit on the autograder, but it is a good start!
 // Let us know if you have any questions or concerns on Ed!
 
+// You should be able to run `pnpm test` in your terminal to run the sample test cases we have provided!
+
 // Exercise 1: Transform a List of Products (10 points)
 /**
  * Input: an array of products with name, price, and category.
