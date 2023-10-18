@@ -13,7 +13,7 @@ const Paginator = (props: Props) => {
     const minLimit = props.minLimit ?? 1;
     const maxLimit = props.maxLimit;
 
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(minLimit);
 
     const handleIncrement = () => {
         if (page < maxLimit) {
@@ -42,7 +42,7 @@ const Paginator = (props: Props) => {
                 </button>
             </div>
             <p className='read-the-docs'>
-                Edit <code>src/App.tsx</code> to get started!
+                Edit <code>src/Paginator.tsx</code> to get started!
             </p>
         </>
     );

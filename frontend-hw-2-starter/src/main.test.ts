@@ -50,9 +50,9 @@ test("describeFinance should handle wealthy", () => {
 
 // Exercise 5 Tests
 test("constructSentence should construct the sentence correctly", () => {
-    expect(
-        constructSentence("www.example.com", { name: "Alice", age: 25 })
-    ).toEqual("Hello, my name is Alice and I'm 25 years old.");
+    expect(constructSentence({ name: "Alice", age: 25 })).toEqual(
+        "Hello, my name is Alice and I'm 25 years old."
+    );
 });
 
 // Exercise 6 Tests

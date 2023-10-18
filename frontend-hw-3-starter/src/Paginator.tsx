@@ -9,12 +9,7 @@ import { ChevronUpCircle, ChevronDownCircle } from "lucide-react";
  * It will keep track of what page a user is on (say, in an e-book),
  * and then allow them to go to the next or previous page.
  *
- * In the <h2>, you should display the current page number.
- * When the user clicks on the up arrow, the current page number should increase by 1.
- * When the user clicks on the down arrow, the current page number should decrease by 1.
- * When the component first loads, the current page number should default to 1.
- *
- * However, note that you are passed a set of props,
+ * Note that you are passed a set of props,
  * which are the minimum and maximum page numbers you can go to.
  * The exact details of the type Props are given below.
  *
@@ -23,6 +18,11 @@ import { ChevronUpCircle, ChevronDownCircle } from "lucide-react";
  * If the user is on page 10 and clicks the up arrow, nothing should happen.
  *
  * This should constrain your behavior accordingly!
+ *
+ * In the <h2>, you should display the current page number.
+ * When the user clicks on the up arrow, the current page number should increase by 1.
+ * When the user clicks on the down arrow, the current page number should decrease by 1.
+ * When the component first loads, the current page number should default to 1 if no minLimit was provided, and the minLimit if it was provided.
  *
  * To get started, run
  * `pnpm install`
@@ -60,7 +60,7 @@ const Paginator = (props: Props) => {
                 </button>
             </div>
             <p className='read-the-docs'>
-                Edit <code>src/App.tsx</code> to get started!
+                Edit <code>src/Paginator.tsx</code> to get started!
             </p>
         </>
     );

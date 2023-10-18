@@ -14,15 +14,42 @@
  * Output: an array of products where the name is capitalized, price is increased by 10%, and only electronics are allowed.
  */
 type Product = { name: string; price: number; category: string };
-const transformProducts = (products: Product[]): Product[] => /* implementation here */;
+const transformProducts = (products: Product[]): Product[] =>
+    products
+        .map((product) => ({
+            name: product.name.toUpperCase(),
+            price: product.price * 1.1,
+            category: product.category,
+        }))
+        .filter((product) => product.category === "electronics");
 
 // Exercise 2: Aggregate Orders (10 points)
 /**
  * Input: an array of orders with id, customerId, and amount.
- * Output: an object that sums the amounts by customerId using reduce.
+ * Output: an object that sums the amounts by customerId.
  */
 type Order = { id: number; customerId: number; amount: number };
-const aggregateOrders = (orders: Order[]): { [customerId: string]: number } => /* implementation here */;
+const aggregateOrders = (orders: Order[]): { [customerId: string]: number } => {
+    let result: { [customerId: string]: number } = {};
+
+    orders.forEach((order) => {
+        if (result[order.customerId]) {
+            result[order.customerId] += order.amount;
+        } else {
+            result[order.customerId] = order.amount;
+        }
+    });
+
+    return result;
+};
+
+const aggregateOrdersUsingReduce = (
+    orders: Order[]
+): { [customerId: string]: number } =>
+    orders.reduce((acc, order) => {
+        acc[order.customerId] = (acc[order.customerId] ?? 0) + order.amount;
+        return acc;
+    }, {} as { [customerId: string]: number });
 
 // Exercise 3: Analyze Movie Ratings (10 points)
 /**
@@ -30,7 +57,10 @@ const aggregateOrders = (orders: Order[]): { [customerId: string]: number } => /
  * Output: an array of strings containing only the title and genre of movies rated above 8, and formatted as "Title (Genre)".
  */
 type Movie = { title: string; genre: string; rating: number };
-const analyzeMovies = (movies: Movie[]): string[] => /* implementation here */;
+const analyzeMovies = (movies: Movie[]): string[] =>
+    movies
+        .filter((movie) => movie.rating > 8)
+        .map((movie) => `${movie.title} (${movie.genre})`);
 
 // Exercise 4: Describe Person's Financial Situation (10 points)
 /**
@@ -38,7 +68,12 @@ const analyzeMovies = (movies: Movie[]): string[] => /* implementation here */;
  * Output: Return 'wealthy' if the balance is over 10000, 'moderate' if the balance is between 1000 and 10000, and 'poor' otherwise.
  */
 type Person = { name: string; age: number; balance: number };
-const describeFinance = (person: Person): string => /* implementation here */;
+const describeFinance = (person: Person): string =>
+    person.balance > 10000
+        ? "wealthy"
+        : person.balance >= 1000
+        ? "moderate"
+        : "poor";
 
 // Exercise 5: Construct a Sentence (10 points)
 /**
@@ -46,7 +81,8 @@ const describeFinance = (person: Person): string => /* implementation here */;
  * Output: a complete sentence using string interpolation, formatted as "Hello, my name is [name] and I'm [age] years old."
  */
 type Params = { name: string; age: number };
-const constructSentence = (url: string, params: Params): string => /* implementation here */;
+const constructSentence = (params: Params): string =>
+    `Hello, my name is ${params.name} and I'm ${params.age} years old.`;
 
 // Exercise 6: Categorize Students by Grades (10 points)
 /**
@@ -54,7 +90,31 @@ const constructSentence = (url: string, params: Params): string => /* implementa
  * Output: an object categorizing students by their grades (A, B, C, D, F).
  */
 type Student = { name: string; grade: number };
-const categorizeStudents = (students: Student[]): { [grade: string]: Student[] } => /* implementation here */;
+const categorizeStudents = (
+    students: Student[]
+): { [grade: string]: Student[] } => {
+    let res: { [grade: string]: Student[] } = {};
+
+    students.forEach((student) => {
+        const grade =
+            student.grade >= 90
+                ? "A"
+                : student.grade >= 80
+                ? "B"
+                : student.grade >= 70
+                ? "C"
+                : student.grade >= 60
+                ? "D"
+                : "F";
+        if (res[grade]) {
+            res[grade].push(student);
+        } else {
+            res[grade] = [student];
+        }
+    });
+
+    return res;
+};
 
 // Exercise 7: Handle Null Values in Nested Object (10 points)
 /**
@@ -63,16 +123,17 @@ const categorizeStudents = (students: Student[]): { [grade: string]: Student[] }
  * Use nullish coalescing to handle potential null values.
  */
 type NestedObject = { level1?: { level2?: { level3?: { value?: string } } } };
-const handleNestedObject = (obj: NestedObject): string => /* implementation here */;
+const handleNestedObject = (obj: NestedObject): string =>
+    obj.level1?.level2?.level3?.value ?? "Not available";
 
 // End of assignment.
 
 export {
-  transformProducts,
-  aggregateOrders,
-  analyzeMovies,
-  describeFinance,
-  constructSentence,
-  categorizeStudents,
-  handleNestedObject,
+    transformProducts,
+    aggregateOrders,
+    analyzeMovies,
+    describeFinance,
+    constructSentence,
+    categorizeStudents,
+    handleNestedObject,
 };

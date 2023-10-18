@@ -4,8 +4,7 @@ import Paginator from "./Paginator";
 
 /**
  * Welcome to Homework 4, the last Frontend-only homework!
- * After this, we'll be moving on to backend development, as well as the final project,
- * so there'll be less easy auto-graded stuff and more fun stuff!
+ * After this, we'll be moving on to backend development, as well as the final project.
  *
  * This homework tests more advanced React concepts: Props, Minimal State, Memoization.
  *
@@ -78,7 +77,7 @@ const Gallery = <T extends { name: string }>({
     const [page, setPage] = useState(1);
     const [search, setSearch] = useState("");
 
-    const itemsToDisplay: (typeof props)["data"] = useMemo(() => {
+    const itemsToDisplay: T[] = useMemo(() => {
         // TODO: Implement some logic to "derive" the items that we should display on this page based on our state!
         return [];
     }, [search, page, itemsPerPage, data]);

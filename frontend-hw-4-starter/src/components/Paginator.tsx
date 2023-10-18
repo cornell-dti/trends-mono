@@ -1,7 +1,5 @@
 import { ChevronUpCircle, ChevronDownCircle } from "lucide-react";
 
-// EXAMPLE SOLUTION
-
 type Props = {
     minLimit?: number;
     maxLimit: number;

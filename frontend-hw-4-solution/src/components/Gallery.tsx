@@ -13,8 +13,7 @@ const Gallery = <T extends { name: string }>(props: Props<T>) => {
     const [page, setPage] = useState(1);
     const [search, setSearch] = useState("");
 
-    const itemsToDisplay = useMemo(() => {
-        // TODO: Implement!
+    const itemsToDisplay: T[] = useMemo(() => {
         return data
             .filter((item) =>
                 item.name
@@ -26,7 +25,6 @@ const Gallery = <T extends { name: string }>(props: Props<T>) => {
     }, [search, page, itemsPerPage, data]);
 
     const lastPossiblePage = useMemo(() => {
-        // TODO: Implement!
         return Math.ceil(data.length / itemsPerPage);
     }, [data, itemsPerPage]);
 

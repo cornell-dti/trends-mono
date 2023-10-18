@@ -15,7 +15,7 @@ const transformProducts = (products: Product[]): Product[] =>
 type Order = { id: number; customerId: number; amount: number };
 const aggregateOrders = (orders: Order[]): { [customerId: string]: number } =>
     orders.reduce((acc, order) => {
-        acc[order.customerId] = (acc[order.customerId] || 0) + order.amount;
+        acc[order.customerId] = (acc[order.customerId] ?? 0) + order.amount;
         return acc;
     }, {} as { [customerId: string]: number });
 
@@ -37,8 +37,8 @@ const describeFinance = (person: Person): string =>
 
 // Exercise 5
 type Params = { name: string; age: number };
-const constructSentence = (url: string, params: Params): string =>
-    `Hello, my name is ${params.name} and I'm ${params.age} years old.`;
+const constructSentence = ({ name, age }: Params): string =>
+    `Hello, my name is ${name} and I'm ${age} years old.`;
 
 // Exercise 6
 type Student = { name: string; grade: number };
