@@ -8,11 +8,13 @@ This template is appropriate for:
 -   Final projects
 -   Etc.
 
+Note that it does NOT contain a backend! This is only for the frontend.
+
 It features the following:
 
--   Mantine UI Library for prefabricated components
--   Lucide Icon Library for prefabricated icons
--   React Router for routing
+-   [Mantine UI Library](https://mantine.dev/) for prefabricated components
+-   [Lucide Icon Library](https://lucide.dev/) for prefabricated icons
+-   [React Router](https://reactrouter.com/) for routing
 
 It also utilizes the following core libraries:
 
@@ -42,7 +44,6 @@ Here's a brief overview of the parts of the project you are encouraged to edit:
 
 Here's a brief technical explanation of the rest of the project:
 
--   `src/main.tsx`: The entry point for the app. React will "mount" itself within the HTML element with the ID `root` from this file.
 -   `src/App.tsx`: The root React component. In here, I've setup a component library, as well as routing, for you already. You may customize it, but you don't have to unless you know what you're doing.
 -   `src/index.css`: The global CSS file. You can add global styles here.
 
