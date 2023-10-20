@@ -57,6 +57,10 @@ import Paginator from "./Paginator";
  * For grading purposes, do not remove any of the provided code, especially any 'data-testid' attributes.
  * Instead, add new code as needed!
  *
+ * When you're done, you should be able to see a webpage with a large list of items.
+ * There will be a display for what page you're on in the list, and you can move to the next or previous pages.
+ * Additionally, when you enter some search in the search-box, some items will get filtered out and the pages will change accordingly.
+ *
  * Good luck!
  *
  * As always, feel free to ask questions on Ed or come to office hours.
