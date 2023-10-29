@@ -17,7 +17,7 @@ export const reverseString = (inputString) => {
 
 // QUESTION 4: Temperature Converter
 export const convertToCelsius = (fahrenheit) => {
-    return (celsius - 32) * (5 / 9);
+    return (fahrenheit - 32) * (5 / 9);
 };
 
 // QUESTION 5: Find Duplicate Characters

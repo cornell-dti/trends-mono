@@ -53,6 +53,7 @@ export const findDuplicates = (inputString) => {
 // Assume that you must buy before you sell.
 // INPUT: An array of numbers [p1, p2, p3, ...]
 // OUTPUT: An object { buyIndex: x, sellIndex: y }.
+// If there is no best time, return -1 in place of x and y;
 export const highestProfitOpportunity = (prices) => {
     // Your code here
 };
