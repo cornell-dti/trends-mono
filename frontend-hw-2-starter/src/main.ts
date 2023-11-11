@@ -77,7 +77,7 @@ const describeFinance = (person: Person): string =>
 
 // Exercise 5: Construct a Sentence (10 points)
 /**
- * Input: a string representing a base URL and an object containing name and age parameters.
+ * Input: an object containing name and age parameters.
  * Output: a complete sentence using string interpolation, formatted as "Hello, my name is [name] and I'm [age] years old."
  */
 type Params = { name: string; age: number };
