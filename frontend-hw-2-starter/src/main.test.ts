@@ -1,84 +1,79 @@
 import { expect, test } from "vitest";
 import {
-    transformProducts,
-    aggregateOrders,
-    analyzeMovies,
-    describeFinance,
-    constructSentence,
-    categorizeStudents,
-    handleNestedObject,
+    formatLibraryCatalog,
+    summarizePurchases,
+    filterHighQualityArticles,
+    assessFinancialStanding,
+    craftGreetingMessage,
+    organizeCourses,
+    safelyAccessDeepProperty,
 } from "./main.ts";
 
 // Exercise 1 Tests
-test("transformProducts should transform and filter products", () => {
+test("formatLibraryCatalog should format and filter books", () => {
     expect(
-        transformProducts([
-            { name: "laptop", price: 1000, category: "electronics" },
-            { name: "shirt", price: 20, category: "clothing" },
+        formatLibraryCatalog([
+            { title: "The Great Gatsby", author: "F. Scott Fitzgerald", genre: "fiction" },
+            { title: "Brief Answers to the Big Questions", author: "Stephen Hawking", genre: "non-fiction" },
         ])
-    ).toEqual([{ name: "LAPTOP", price: 1100, category: "electronics" }]);
+    ).toEqual([{ title: "\"The Great Gatsby\"", author: "f. scott fitzgerald", genre: "fiction" }]);
 });
 
 // Exercise 2 Tests
-test("aggregateOrders should aggregate orders by customerId", () => {
+test("summarizePurchases should summarize purchases by userId", () => {
     expect(
-        aggregateOrders([
-            { id: 1, customerId: 123, amount: 100 },
-            { id: 2, customerId: 123, amount: 50 },
-            { id: 3, customerId: 456, amount: 200 },
+        summarizePurchases([
+            { purchaseId: 1, userId: 1, total: 100 },
+            { purchaseId: 2, userId: 1, total: 150 },
+            { purchaseId: 3, userId: 2, total: 200 },
         ])
-    ).toEqual({ "123": 150, "456": 200 });
+    ).toEqual({ "1": 250, "2": 200 });
 });
 
 // Exercise 3 Tests
-test("analyzeMovies should filter and format movies", () => {
+test("filterHighQualityArticles should filter and format articles", () => {
     expect(
-        analyzeMovies([
-            { title: "Inception", genre: "Action", rating: 9 },
-            { title: "Toy Story", genre: "Animation", rating: 8.5 },
-            { title: "The Room", genre: "Drama", rating: 3 },
+        filterHighQualityArticles([
+            { title: "Understanding TypeScript", topic: "Programming", score: 7 },
+            { title: "Introduction to Cooking", topic: "Cooking", score: 4 },
         ])
-    ).toEqual(["Inception (Action)", "Toy Story (Animation)"]);
+    ).toEqual(["Understanding TypeScript: Programming"]);
 });
 
 // Exercise 4 Tests
-test("describeFinance should handle wealthy", () => {
-    expect(describeFinance({ name: "John", age: 30, balance: 20000 })).toEqual(
-        "wealthy"
-    );
+test("assessFinancialStanding should classify financial status", () => {
+    expect(assessFinancialStanding({ name: "Jane", monthlyIncome: 7000, expenses: 1000 })).toEqual("wealthy");
+    expect(assessFinancialStanding({ name: "Doe", monthlyIncome: 3000, expenses: 500 })).toEqual("stable");
+    expect(assessFinancialStanding({ name: "John", monthlyIncome: 1500, expenses: 1000 })).toEqual("struggling");
 });
 
 // Exercise 5 Tests
-test("constructSentence should construct the sentence correctly", () => {
-    expect(constructSentence({ name: "Alice", age: 25 })).toEqual(
-        "Hello, my name is Alice and I'm 25 years old."
+test("craftGreetingMessage should create greeting message correctly", () => {
+    const currentYear = new Date().getFullYear();
+    expect(craftGreetingMessage({ firstName: "Alice", birthYear: 1990 })).toEqual(
+        `Welcome, Alice! Your age is ${currentYear - 1990}.`
     );
 });
 
 // Exercise 6 Tests
-test("categorizeStudents should categorize students correctly", () => {
+test("organizeCourses should organize courses by difficulty", () => {
     expect(
-        categorizeStudents([
-            { name: "Student1", grade: 95 },
-            { name: "Student2", grade: 85 },
-            { name: "Student3", grade: 75 },
-            { name: "Student4", grade: 65 },
-            { name: "Student5", grade: 55 },
+        organizeCourses([
+            { courseName: "Introduction to TypeScript", difficulty: "easy" },
+            { courseName: "Advanced Cooking Techniques", difficulty: "hard" },
         ])
     ).toEqual({
-        A: [{ name: "Student1", grade: 95 }],
-        B: [{ name: "Student2", grade: 85 }],
-        C: [{ name: "Student3", grade: 75 }],
-        D: [{ name: "Student4", grade: 65 }],
-        F: [{ name: "Student5", grade: 55 }],
+        easy: [{ courseName: "Introduction to TypeScript", difficulty: "easy" }],
+        hard: [{ courseName: "Advanced Cooking Techniques", difficulty: "hard" }],
     });
 });
 
 // Exercise 7 Tests
-test("handleNestedObject should return the nested value", () => {
+test("safelyAccessDeepProperty should return the correct value or 'Unavailable'", () => {
     expect(
-        handleNestedObject({
-            level1: { level2: { level3: { value: "Success" } } },
+        safelyAccessDeepProperty({
+            firstLevel: { secondLevel: { thirdLevel: { deepValue: "Found Me!" } } },
         })
-    ).toEqual("Success");
+    ).toEqual("Found Me!");
+    expect(safelyAccessDeepProperty({})).toEqual("Unavailable");
 });

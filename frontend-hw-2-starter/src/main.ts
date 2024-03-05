@@ -8,132 +8,85 @@
 
 // You should be able to run `pnpm test` in your terminal to run the sample test cases we have provided!
 
-// Exercise 1: Transform a List of Products (10 points)
+// Exercise 1: Format a Library Catalog (10 points)
 /**
- * Input: an array of products with name, price, and category.
- * Output: an array of products where the name is capitalized, price is increased by 10%, and only electronics are allowed.
+ * Input: an array of books with title, author, and genre.
+ * Output: an array of books where each title is wrapped in double quotations, author names are in all lowercase, and only 'fiction' genre books are included.
  */
-type Product = { name: string; price: number; category: string };
-const transformProducts = (products: Product[]): Product[] =>
-    products
-        .map((product) => ({
-            name: product.name.toUpperCase(),
-            price: product.price * 1.1,
-            category: product.category,
-        }))
-        .filter((product) => product.category === "electronics");
+type Book = { title: string; author: string; genre: string };
+const formatLibraryCatalog = (books: Book[]): Book[] =>
+    // TODO: Your code goes here
 
-// Exercise 2: Aggregate Orders (10 points)
+
+// Exercise 2: Summarize Customer Purchases (10 points)
 /**
- * Input: an array of orders with id, customerId, and amount.
- * Output: an object that sums the amounts by customerId.
+ * Input: an array of purchases with purchaseId, userId, and total.
+ * Output: an object summarizing total spending per userId.
  */
-type Order = { id: number; customerId: number; amount: number };
-const aggregateOrders = (orders: Order[]): { [customerId: string]: number } => {
-    let result: { [customerId: string]: number } = {};
+type Purchase = { purchaseId: number; userId: number; total: number };
+const summarizePurchases = (purchases: Purchase[]): { [userId: string]: number } => 
+    // TODO: Your code goes here
 
-    orders.forEach((order) => {
-        if (result[order.customerId]) {
-            result[order.customerId] += order.amount;
-        } else {
-            result[order.customerId] = order.amount;
-        }
-    });
 
-    return result;
-};
-
-const aggregateOrdersUsingReduce = (
-    orders: Order[]
-): { [customerId: string]: number } =>
-    orders.reduce((acc, order) => {
-        acc[order.customerId] = (acc[order.customerId] ?? 0) + order.amount;
-        return acc;
-    }, {} as { [customerId: string]: number });
-
-// Exercise 3: Analyze Movie Ratings (10 points)
+// Exercise 3: Filter High-Quality Articles (10 points)
 /**
- * Input: an array of movies with title, genre, and rating.
- * Output: an array of strings containing only the title and genre of movies rated above 8, and formatted as "Title (Genre)".
+ * Input: an array of articles with title, topic, and score.
+ * Output: an array of strings, each representing articles with a score above 5, formatted as "Title: Topic".
  */
-type Movie = { title: string; genre: string; rating: number };
-const analyzeMovies = (movies: Movie[]): string[] =>
-    movies
-        .filter((movie) => movie.rating > 8)
-        .map((movie) => `${movie.title} (${movie.genre})`);
+type Article = { title: string; topic: string; score: number };
+const filterHighQualityArticles = (articles: Article[]): string[] =>
+    // TODO: Your code goes here
 
-// Exercise 4: Describe Person's Financial Situation (10 points)
+
+// Exercise 4: Assess Financial Standing (10 points)
 /**
- * Input: an object representing a person's name, age, and bank balance.
- * Output: Return 'wealthy' if the balance is over 10000, 'moderate' if the balance is between 1000 and 10000, and 'poor' otherwise.
+ * Input: an object representing an individual's financial details including name, monthlyIncome, and expenses.
+ * Output: 'wealthy' if net income is above 5000, 'stable' if between 2000 and 5000, and 'struggling' otherwise.
  */
-type Person = { name: string; age: number; balance: number };
-const describeFinance = (person: Person): string =>
-    person.balance > 10000
-        ? "wealthy"
-        : person.balance >= 1000
-        ? "moderate"
-        : "poor";
+type FinancialDetails = { name: string; monthlyIncome: number; expenses: number };
+const assessFinancialStanding = (details: FinancialDetails): string => 
+    // TODO: Your code goes here
 
-// Exercise 5: Construct a Sentence (10 points)
+
+// Exercise 5: Craft Greeting Message (10 points)
 /**
- * Input: an object containing name and age parameters.
- * Output: a complete sentence using string interpolation, formatted as "Hello, my name is [name] and I'm [age] years old."
+ * Input: an object with fields for firstName and birthYear.
+ * Output: a greeting message using string interpolation, formatted as "Welcome, [firstName]! Your age is [age]."
+ * Hint: You can use `new Date().getFullYear()` to get current year.
  */
-type Params = { name: string; age: number };
-const constructSentence = (params: Params): string =>
-    `Hello, my name is ${params.name} and I'm ${params.age} years old.`;
+type GreetingInfo = { firstName: string; birthYear: number };
+const craftGreetingMessage = (info: GreetingInfo): string => 
+    // TODO: Your code goes here
 
-// Exercise 6: Categorize Students by Grades (10 points)
+
+// Exercise 6: Organize Courses by Difficulty (10 points)
 /**
- * Input: an array of students with a name and grade.
- * Output: an object categorizing students by their grades (A, B, C, D, F).
+ * Input: an array of courses with courseName and difficulty level (easy, medium, hard).
+ * Output: an object organizing courses by their difficulty level.
  */
-type Student = { name: string; grade: number };
-const categorizeStudents = (
-    students: Student[]
-): { [grade: string]: Student[] } => {
-    let res: { [grade: string]: Student[] } = {};
+type Course = { courseName: string; difficulty: string };
+const organizeCourses = (courses: Course[]): { [difficulty: string]: Course[] } =>     
+    // TODO: Your code goes here
 
-    students.forEach((student) => {
-        const grade =
-            student.grade >= 90
-                ? "A"
-                : student.grade >= 80
-                ? "B"
-                : student.grade >= 70
-                ? "C"
-                : student.grade >= 60
-                ? "D"
-                : "F";
-        if (res[grade]) {
-            res[grade].push(student);
-        } else {
-            res[grade] = [student];
-        }
-    });
 
-    return res;
-};
-
-// Exercise 7: Handle Null Values in Nested Object (10 points)
+// Exercise 7: Safely Access Deep Properties (10 points)
 /**
- * Input: a nested object that may contain null values at any level.
- * Output: a string containing a value deep inside the object, or a default "Not available" if any part of the path is null or undefined.
- * Use nullish coalescing to handle potential null values.
+ * Input: a potentially deeply nested object that could have null or undefined properties.
+ * Output: a safely retrieved value from within the nested structure, or "Unavailable" if the path is broken.
  */
-type NestedObject = { level1?: { level2?: { level3?: { value?: string } } } };
-const handleNestedObject = (obj: NestedObject): string =>
-    obj.level1?.level2?.level3?.value ?? "Not available";
+type DeeplyNestedObject = { firstLevel?: { secondLevel?: { thirdLevel?: { deepValue?: string } } } };
+const safelyAccessDeepProperty = (obj: DeeplyNestedObject): string =>
+    // TODO: Your code goes here
 
-// End of assignment.
+
+// Congratulations on completing these exercises!
 
 export {
-    transformProducts,
-    aggregateOrders,
-    analyzeMovies,
-    describeFinance,
-    constructSentence,
-    categorizeStudents,
-    handleNestedObject,
+    formatLibraryCatalog,
+    summarizePurchases,
+    filterHighQualityArticles,
+    assessFinancialStanding,
+    craftGreetingMessage,
+    organizeCourses,
+    safelyAccessDeepProperty,
 };
