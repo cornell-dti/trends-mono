@@ -14,9 +14,9 @@
  * Output: an array of books where each title is wrapped in double quotations, author names are in all lowercase, and only 'fiction' genre books are included.
  */
 type Book = { title: string; author: string; genre: string };
-const formatLibraryCatalog = (books: Book[]): Book[] =>
+const formatLibraryCatalog = (books: Book[]): Book[] => {
     // TODO: Your code goes here
-
+};
 
 // Exercise 2: Summarize Customer Purchases (10 points)
 /**
@@ -24,9 +24,9 @@ const formatLibraryCatalog = (books: Book[]): Book[] =>
  * Output: an object summarizing total spending per userId.
  */
 type Purchase = { purchaseId: number; userId: number; total: number };
-const summarizePurchases = (purchases: Purchase[]): { [userId: string]: number } => 
+const summarizePurchases = (purchases: Purchase[]): { [userId: string]: number } => {
     // TODO: Your code goes here
-
+};
 
 // Exercise 3: Filter High-Quality Articles (10 points)
 /**
@@ -34,9 +34,9 @@ const summarizePurchases = (purchases: Purchase[]): { [userId: string]: number }
  * Output: an array of strings, each representing articles with a score above 5, formatted as "Title: Topic".
  */
 type Article = { title: string; topic: string; score: number };
-const filterHighQualityArticles = (articles: Article[]): string[] =>
+const filterHighQualityArticles = (articles: Article[]): string[] => {
     // TODO: Your code goes here
-
+};
 
 // Exercise 4: Assess Financial Standing (10 points)
 /**
@@ -44,9 +44,9 @@ const filterHighQualityArticles = (articles: Article[]): string[] =>
  * Output: 'wealthy' if net income is above 5000, 'stable' if between 2000 and 5000, and 'struggling' otherwise.
  */
 type FinancialDetails = { name: string; monthlyIncome: number; expenses: number };
-const assessFinancialStanding = (details: FinancialDetails): string => 
+const assessFinancialStanding = (details: FinancialDetails): string => {
     // TODO: Your code goes here
-
+};
 
 // Exercise 5: Craft Greeting Message (10 points)
 /**
@@ -55,9 +55,9 @@ const assessFinancialStanding = (details: FinancialDetails): string =>
  * Hint: You can use `new Date().getFullYear()` to get current year.
  */
 type GreetingInfo = { firstName: string; birthYear: number };
-const craftGreetingMessage = (info: GreetingInfo): string => 
+const craftGreetingMessage = (info: GreetingInfo): string => {
     // TODO: Your code goes here
-
+};
 
 // Exercise 6: Organize Courses by Difficulty (10 points)
 /**
@@ -65,9 +65,9 @@ const craftGreetingMessage = (info: GreetingInfo): string =>
  * Output: an object organizing courses by their difficulty level.
  */
 type Course = { courseName: string; difficulty: string };
-const organizeCourses = (courses: Course[]): { [difficulty: string]: Course[] } =>     
+const organizeCourses = (courses: Course[]): { [difficulty: string]: Course[] } => {
     // TODO: Your code goes here
-
+};
 
 // Exercise 7: Safely Access Deep Properties (10 points)
 /**
@@ -75,9 +75,9 @@ const organizeCourses = (courses: Course[]): { [difficulty: string]: Course[] } 
  * Output: a safely retrieved value from within the nested structure, or "Unavailable" if the path is broken.
  */
 type DeeplyNestedObject = { firstLevel?: { secondLevel?: { thirdLevel?: { deepValue?: string } } } };
-const safelyAccessDeepProperty = (obj: DeeplyNestedObject): string =>
+const safelyAccessDeepProperty = (obj: DeeplyNestedObject): string => {
     // TODO: Your code goes here
-
+};
 
 // Congratulations on completing these exercises!
 
